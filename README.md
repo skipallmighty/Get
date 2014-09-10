@@ -21,3 +21,18 @@ Get.JSON(someURL) {
     }
 }
 ```
+
+Remember that you are in a closure. So if you want to reference the view use `self`.
+
+Remember that you may or may not be on the main thread so if you want to update the UI do something like dis: 
+
+```
+Get.JSON(someURL) {
+    (response) in
+    //do some stuff here to make things happen
+    //make sure you are on the main thread
+    dispatch_async(dispatch_get_main_queue())    
+        self.tableView.reloadData() // reload table/data or whatever you want to do to update the UI.
+    }
+}
+```
