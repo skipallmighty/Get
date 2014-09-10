@@ -37,4 +37,4 @@ Get.JSON(someURL) {
 }
 ```
 
-Does not throw errors right now. Just gets.
+Does not throw errors right now. Just gets JSON. That's all.
